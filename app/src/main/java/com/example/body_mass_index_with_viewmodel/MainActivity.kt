@@ -15,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -42,7 +43,7 @@ fun BodyMassIndex(bmiViewModel: BmiViewModel = viewModel()) {
         modifier = Modifier.padding(top = 24.dp),
     ){
        Text(
-           text = "BMI calculator",
+           text = stringResource(R.string.bmi_calculator),
            style = MaterialTheme.typography.titleLarge,
            textAlign = TextAlign.Center,
            color = MaterialTheme.colorScheme.primary,
@@ -51,8 +52,10 @@ fun BodyMassIndex(bmiViewModel: BmiViewModel = viewModel()) {
         OutlinedTextFieldBMI("height")
         OutlinedTextFieldBMI("weight")
         Text(
-            text = "Your BMI is ${bmiViewModel.countBMI}",
-            modifier = Modifier.fillMaxWidth().padding(8.dp)
+            text = stringResource(R.string.bmi_result, bmiViewModel.countBMI),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
         )
     }
 

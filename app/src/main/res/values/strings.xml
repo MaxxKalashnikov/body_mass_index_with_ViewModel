@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">body_mass_index_with_ViewModel</string>
+    <string name="bmi_calculator">BMI calculator</string>
+    <string name="bmi_result">Your BMI is %s</string>
 </resources>
